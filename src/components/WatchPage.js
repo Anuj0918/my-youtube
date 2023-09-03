@@ -7,14 +7,15 @@ import { PiShareFat } from "react-icons/pi";
 import { GoDownload } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa6";
-import { YOUTUBE_VIDEO_API } from "./contants/api_data";
+import { YOUTUBE_VIDEO_BYID  } from "./contants/api_data";
 import CommentsContainer from "./CommentsContainer";
+import ShimmerWatch from "../ShimmerUI/ShimmerWatch";
 
 
 const WatchPage = () =>{
     const dispatch = useDispatch();
     const [searchParam] = useSearchParams();
-    const videoDetails = YOUTUBE_VIDEO_API + searchParam.get("v");
+    const videoDetails = YOUTUBE_VIDEO_BYID + searchParam.get("v");
 
   const [videoInfo, setVideoInfo] = useState([]);
 
@@ -31,7 +32,8 @@ const WatchPage = () =>{
         dispatch(closeMenu());
     },[]);
 
-return (
+     return videoInfo?.length === 0 ? (  <ShimmerWatch /> ):
+    (
         <div className="m-5">
          <iframe 
          width="1000" 

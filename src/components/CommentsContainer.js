@@ -1,76 +1,52 @@
 import React from "react";
 import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 
-const arrComment = [
+const actualComment = [
   {
-    name: "Rahul chavan",
-    text: "namaste rract project very good",
-    reply: [
+    name:"@spillthebuzz",
+    text:"when can we expect EP-04 ?? you made me fall in love with JavaScript, Amazing content",
+    reply:[
       {
         name: "Samat chavan",
-        text: "namaste rract project very good",
+        text: "After the hype of linkedin i came here and believe me it was worth it all...the way of your presentation and the feeling that  instead of a teacher a friend is teaching,makes the videos more and more interesting.thanks a lot for sharing your precious knowledge with us and that too for free of cost.",
         reply: [],
       },
-      {
-        name: "Kishor chavan",
-        text: "namaste rract project very good",
-        reply: [],
-      },
-      {
-        name: "Harshdeep chavan",
-        text: "namaste rract project very good",
-        reply: [],
-      },
-    ],
-  },
-  {
-    name: "Suresh chavan",
-    text: "namaste rract project very good",
-    reply: [
-      {
-        name: "Rahul chavan",
-        text: "namaste rract project very good",
-        reply: [
-          {
-            name: "Rahul chavan",
-            text: "namaste rract project very good",
-            reply: [
-              {
-                name: "Rahul chavan",
-                text: "namaste rract project very good",
-                reply: [
-                  {
-                    name: "Rahul chavan",
-                    text: "namaste rract project very good",
-                    reply: [],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Nilesh chavan",
-    text: "namaste rract project very good",
-    reply: [
-      {
-        name: "Rahul chavan",
-        text: "namaste rract project very good",
-        reply: [
-          {
-            name: "Rahul chavan",
-            text: "namaste rract project very good",
-            reply: [],
-          },
-        ],
-      },
-    ],
-  },
-];
+    ]
 
+  },
+  {
+    name:"@DebojyotiMandal",
+    text:"when can we expect EP-04 ?? you made me fall in love with JavaScript, 🚀🚀🚀♥Amazing content",
+    reply:[
+      {
+        name: "Samat chavan",
+        text: "hh my God Man!! 🔥 Heavy stuffs. I literally had goosebumps when you showed practical example of 📚 Thank you so much for these awesome contents. 🙏🏼",
+        reply: [],
+      },
+      {
+        name: "Samat chavan",
+        text: "namaste rract project very⭐🔴🚀♥ good",
+        reply: [],
+      },
+    ]
+  },
+  {
+    name:"@rahulchavan",
+    text:"You kept the old cooking style alive, fan of the your cooking brother एकदा तरी येतलाय जेवुक😁😁",
+    reply:  [
+      {
+        name: "Samat chavan",
+        text: "कोणी कोणी शेवट पर्यंत व्हिडिओ बघितला? Also please let us know how do you liked it..❤️🙂 See you until next weekend 😊🙏🌴",
+        reply: [],
+      },
+      {
+        name: "Samat chavan",
+        text: "You kept the old cooking style alive, fan of the your cooking brother एकदा तरी येतलाय जेवुक😁😁",
+        reply: [],
+      },
+    ]
+  },
+]
 const Comment = ({ data }) => {
   console.log(data);
   // const { name, text, reply } = data;
@@ -122,9 +98,9 @@ const CommentList = ({ comments }) => {
 const CommentsContainer = () => {
   return (
     <div className="p-1 m-1 w-2/3">
-      <CommentList comments={arrComment} />
+      <CommentList comments={actualComment} />
     </div>
   );
 };
-
-export default CommentsContainer;
+	
+ export default CommentsContainer;

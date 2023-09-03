@@ -57,9 +57,9 @@ const Header = () => {
   />
      </a>
         </div>
-    <div className="col-span-10 px-10">
+    <div className=" flex col-span-10 px-2">
        <div>
-    <input className="w-1/2 border border-gray-500 p-2 rounded-l-full" 
+    <input className="  w-8/12 border border-gray-500 p-2 pl-3  rounded-l-full" 
     type="text"
     onChange={(e) => {
       setSearchQuery(e.target.value);
@@ -92,8 +92,8 @@ const Header = () => {
         />
       </div>
     <div className="flex">
-    <BiVideoPlus className="h-8 mr-5"/>
-        <BsBell className="h-8 mr-7"/>
+    <BiVideoPlus className="h-8 mr-5 text-3xl"/>
+        <BsBell className="h-8 mr-7 text-2xl"/>
  <img className="h-9 col-span-1"
  src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user-icon"/>
     </div>

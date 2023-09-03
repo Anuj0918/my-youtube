@@ -1,4 +1,4 @@
-import React from "react";
+  /* import React from "react";
 import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 
 const CommentList = ({ commentListData }) => {
@@ -34,6 +34,4 @@ const CommentList = ({ commentListData }) => {
       })}
     </>
   );
-};
-
-export default CommentList;
+}; */

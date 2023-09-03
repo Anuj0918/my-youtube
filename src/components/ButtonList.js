@@ -5,13 +5,16 @@ const ButtonList = () => {
     return ( 
     <div className="flex">
         <Buttons name="ALL"/>
-        <Buttons name="LIVE"/>
-        <Buttons name="SPORTS"/>
+        <Buttons name="Music"/>
+        <Buttons name="Live"/>
+        <Buttons name="BollyWood"/>
         <Buttons name="free code camp"/>
-        <Buttons name="JETHALAL"/>
+        <Buttons name="Redux"/>
         <Buttons name="SONGS"/>
-        <Buttons name="Striver"/>
-        <Buttons name="Ishan sharma"/>
+        <Buttons name="Sports"/>
+        <Buttons name="News"/>
+        <Buttons name="Frontend"/>
+        <Buttons name="Javasript"/>
     </div>
     );
 };

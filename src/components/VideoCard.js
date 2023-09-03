@@ -4,7 +4,7 @@ import React from "react";
     return (
         <div className="m-1 p-2 w-72 mb-5">
            <img
-        className="rounded-xl"
+        className="rounded-xl hover:opacity-60 transition-opacity duration-300"
         src={info?.snippet?.thumbnails?.medium?.url}
         alt="thumails"
       />
