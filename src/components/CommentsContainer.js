@@ -1,106 +1,120 @@
 import React from "react";
-import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 
-const actualComment = [
+const commentsData = [
   {
-    name:"@spillthebuzz",
-    text:"when can we expect EP-04 ?? you made me fall in love with JavaScript, Amazing content",
-    reply:[
-      {
-        name: "Samat chavan",
-        text: "After the hype of linkedin i came here and believe me it was worth it all...the way of your presentation and the feeling that  instead of a teacher a friend is teaching,makes the videos more and more interesting.thanks a lot for sharing your precious knowledge with us and that too for free of cost.",
-        reply: [],
+    name: "Anuj Tiwari",
+    text: "you made me fall in love with JavaScript, Amazing content",
+    replies: [
+      { 
+      name: "Samat chavan",
+      text: "After the hype of linkedin i came here and believe me it was worth it all...the way of your presentation is nice ",
+      replies:[]
       },
-    ]
+    ],
+  },
+  {
+    name: "@DebojyotiMandal",
+    text: "namaste react project very⭐🔴🚀♥ good",
+    replies: [
+      {
+        name: "Akshay Saini",
+        text: "You kept the old cooking style alive",
+        replies: [],
+      },
+      {
+        name: "Arjun Gurjar",
+        text: "Amazing content",
+        replies: [
+          {
+            name: "Adarsh singh",
+            text: "array function are map reduce filter",
+            replies: [
+              {
+                name: "Arjun sharma",
+                text: "Content is very good",
+                replies: [
+                  {
+                    name: "Rahul chavan",
+                    text: "Css is hard part of frontend",
+                    replies: [
+                      {
+                        name: "Rohit",
+                        text: "Css grid are very important",
+                        replies: [],
+                      },
+                    ],
+                  },
+                  {
+                    name: "Kuldeep Singh",
+                    text: "Flex is used to design the class and grid is for layout",
+                    replies: [],  
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Chaityana Kosti",
+    text: "Closures are very important in javascript",
+    replies: [],
+  },
+  {
+    name: "Ashish Nagar",
+    text: "Typescript is subscript of Javascript",
+    replies: [],
+  },
+  {
+    name: "Akshay Saini",
+    text: "Audience are amazing",
+    replies: [],
+  },
+  {
+    name: "Akshay Saini",
+    text: "Lorem ipsum dolor sit amet, consectetur adip",
+    replies: [],
+  },
+];
 
-  },
-  {
-    name:"@DebojyotiMandal",
-    text:"when can we expect EP-04 ?? you made me fall in love with JavaScript, 🚀🚀🚀♥Amazing content",
-    reply:[
-      {
-        name: "Samat chavan",
-        text: "hh my God Man!! 🔥 Heavy stuffs. I literally had goosebumps when you showed practical example of 📚 Thank you so much for these awesome contents. 🙏🏼",
-        reply: [],
-      },
-      {
-        name: "Samat chavan",
-        text: "namaste rract project very⭐🔴🚀♥ good",
-        reply: [],
-      },
-    ]
-  },
-  {
-    name:"@rahulchavan",
-    text:"You kept the old cooking style alive, fan of the your cooking brother एकदा तरी येतलाय जेवुक😁😁",
-    reply:  [
-      {
-        name: "Samat chavan",
-        text: "कोणी कोणी शेवट पर्यंत व्हिडिओ बघितला? Also please let us know how do you liked it..❤️🙂 See you until next weekend 😊🙏🌴",
-        reply: [],
-      },
-      {
-        name: "Samat chavan",
-        text: "You kept the old cooking style alive, fan of the your cooking brother एकदा तरी येतलाय जेवुक😁😁",
-        reply: [],
-      },
-    ]
-  },
-]
 const Comment = ({ data }) => {
-  console.log(data);
-  // const { name, text, reply } = data;
+  const { name, text, replies } = data;
   return (
-    <>
-      <div className="flex">
-        <img
-          className="h-8 col-span-1"
-          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-          alt="user-logo"
-        />
-        <div className="px-3 mb-5">
-          <p className="font-bold">{data.name}</p>
-          <p>{data.text}</p>
-          <p className="flex text-25 mt-2">
-            {" "}
-            <FiThumbsUp className="mx-2 mr-3 mt-1" />
-            652
-            <FiThumbsDown className="mx-2 mr-3 ml-3 mt-2" />
-            25
-            <span className="ml-5"> Reply</span>
-          </p>
-        </div>
+    <div className="flex shadow-sm bg-gray-100 p-2 rounded-lg my-2">
+      <img
+        className="w-12 h-12"
+        alt="user"
+        src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+      />
+      <div className="px-3">
+        <p className="font-bold">{name}</p>
+        <p>{text}</p>
       </div>
-    </>
+    </div>
   );
 };
 
-const CommentList = ({ comments }) => {
-  return (
-    <>
-      {/* Desclaimer : Please use key as a index */}
-      {comments.map((comment, index) => {
-        return (
-          <>
-            <div className="p-2">
-              <Comment key={index} data={comment} />
-              <div className="pl-5 border border-l-gray ml-5">
-                <CommentList comments={comment.reply} />
-              </div>
-            </div>
-          </>
-        );
-      })}
-    </>
-  );
+const CommentsList = ({ comments }) => {
+  // Disclaimer: Don't use indexes as keys
+  return comments.map((comment, index) => (
+    <div key={index}>
+      <Comment data={comment} />
+      <div className="pl-5 border border-l-black ml-5">
+        <CommentsList comments={comment.replies} />
+      </div>
+    </div>
+  ));
 };
 
 const CommentsContainer = () => {
   return (
-    <div className="p-1 m-1 w-2/3">
-      <CommentList comments={actualComment} />
+    <div className="m-5 p-2">
+      <h1 className="text-2xl font-bold">Comments: </h1>
+      <CommentsList comments={commentsData} />
     </div>
   );
 };
-	
- export default CommentsContainer;
+
+export default CommentsContainer;
